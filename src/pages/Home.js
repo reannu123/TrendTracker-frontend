@@ -33,16 +33,16 @@ function Home() {
       {(
         <div className="container py-5 my-5 border rounded-3 d-flex row justify-content-center m-auto">
           
-          <div class="p-5">
+          <div className="p-5">
             <h1 className="display-5 mb-5 fw-bold text-center">TrendTracker</h1> 
             <p className="lead text-center">Welcome to TrendTracker, an AI-powered Product demand forecasting tool. </p>
           </div>
-          <div class="px-5">
+          <div className="px-5">
             <hr/>
           </div>
           <div className="p-5 input-group w-75 column align-items-center">
             <input type="search" placeholder="Search for a category" className="form-control" />
-            <button type="button" class="btn btn-outline-primary">SEARCH</button>
+            <button type="button" className="btn btn-outline-primary">SEARCH</button>
           </div>
         </div>
       )}
