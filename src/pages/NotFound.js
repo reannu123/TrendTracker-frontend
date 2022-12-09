@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import { instance, auth } from "../api/axios";
 
 function NotFound() {
-
   return (
     <>
-      {(
-        <Container className="py-5 my-5 border rounded-3 d-flex align-items-center justify-content-center">
-          <h1>404 Not Found</h1>
-            
+      {
+        <Container className="py-5 my-3 bg-white rounded-3">
+          <h1 className="text-center display-5 fw-bold text-center">404 Not Found</h1>
         </Container>
-      )}
+      }
     </>
   );
 }

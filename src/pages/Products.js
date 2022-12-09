@@ -3,8 +3,8 @@ import Ranking from "../components/Ranking";
 function Products() {
   return (
     <>
-      <div className="container">
-        <h1 className="m-5 pb-5 text-center border-bottom">Products</h1>
+      <div className="bg-white rounded-3 py-3 container">
+        <h1 className="m-5 text-center">Products</h1>
       </div>
       <Ranking />
     </>

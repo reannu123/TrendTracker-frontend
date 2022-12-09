@@ -11,6 +11,8 @@ import Product from "./pages/Product";
 import User from "./pages/User";
 import Users from "./pages/Users";
 
+import "./main.css";
+
 function App() {
   return (
     <>
@@ -23,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <footer class="py-2 m-4 text-muted border-top">&copy; 2022</footer>
+      <footer className="py-2 m-4 text-muted border-top">&copy; 2022</footer>
     </>
   );
 }

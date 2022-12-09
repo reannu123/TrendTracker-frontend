@@ -5,7 +5,7 @@ function Product() {
   const { id } = useParams();
   return (
     <div className="container">
-      <h1 className="m-5 pb-5 border-bottom">Product {id}</h1>
+      <h1 className="card m-5 pb-5 border-bottom">Product {id}</h1>
     </div>
   );
 }

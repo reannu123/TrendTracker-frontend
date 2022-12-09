@@ -34,7 +34,7 @@ function Item(data) {
           {data.map((item, index) => (
             <div className="col-12 mb-1" key={index}>
               <div className="col-12 d-flex col justify-content-center">
-                <div className=" col-1 border rounded-2 text-center d-flex justify-content-center align-items-center">
+                <div className=" card col-1 border rounded-2 text-center d-flex justify-content-center align-items-center">
                   <h5>{index + 1}</h5>
                 </div>
                 <div className="col-8 card">

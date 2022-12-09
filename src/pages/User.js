@@ -5,7 +5,7 @@ function User() {
   const { id } = useParams();
   return (
     <div className="container">
-      <h1 className="m-5 pb-5 border-bottom">User {id}</h1>
+      <h1 className="m-5 pb-5 card border-bottom">User {id}</h1>
     </div>
   );
 }
