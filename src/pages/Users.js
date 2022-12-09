@@ -4,7 +4,7 @@ function Users() {
   return (
     <>
       <div className="container">
-      <h1 className="m-5 pb-3 text-center border-bottom">Users</h1>
+      <h1 className="m-5 pb-5 text-center border-bottom">Users</h1>
       </div>
       <Ranking />
     </>
