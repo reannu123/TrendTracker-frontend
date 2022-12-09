@@ -7,6 +7,8 @@ import NotFound from "./pages/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
 import  Navbar  from "./components/Navbar";
 import Products from "./pages/Products";
+import Product from "./pages/Product";
+import User from "./pages/User";
 import Users from "./pages/Users";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/products" element={<Products />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/users/:id" element={<User />} />
+        <Route path="/products/:id" element={<Product />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
