@@ -32,17 +32,32 @@ function Home() {
   };
 
   return (
-    <>
-        <div className="container my-3 d-flex row justify-content-center m-auto">
-          <div className="pt-5 border-bottom">
-            <h1 className="display-5 mb-3 fw-bold text-center">TrendTracker</h1>
-            <p className="lead text-center">
-              Welcome to TrendTracker, an AI-powered Product demand forecasting
-              tool.{" "}
+    <div className="">
+      <div className="h-100 container my-3 d-flex row justify-content-center m-auto align-items-center">
+        <div className="py-5 border-bottom">
+          <h1 className="display-5 mb-3 fw-bold text-center">TrendTracker</h1>
+          <p className="lead text-center">
+            Welcome to TrendTracker, an AI-powered Product demand forecasting
+            tool.{" "}
+          </p>
+        </div>
+
+        <div class="p-5 mb-4 bg-white rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class="col-md-8 fs-4">
+              Using a series of utilities, you can create this jumbotron, just
+              like the one in previous versions of Bootstrap. Check out the
+              examples below for how you can remix and restyle it to your
+              liking.
             </p>
+            <button class="btn btn-primary btn-lg" type="button">
+              Example button
+            </button>
           </div>
         </div>
-    </>
+      </div>
+    </div>
   );
 }
 
