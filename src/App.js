@@ -5,15 +5,18 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
+import  Navbar  from "./components/Navbar";
+import Products from "./pages/Products";
+import Users from "./pages/Users";
 
 function App() {
-  const [user, setUser] = useState(null);
 
   return (
     <>
+      <Navbar/>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

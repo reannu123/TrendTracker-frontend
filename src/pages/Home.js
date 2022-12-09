@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { instance, auth } from "../api/axios";
 import "../main.css";
-import Ranking from "../components/ranking";
+import Ranking from "../components/Ranking";
+import Navbar from "../components/Navbar";
+
 function Home() {
   const [user, setUser] = useState({
     username: "",
@@ -31,22 +33,15 @@ function Home() {
 
   return (
     <>
-      {
         <div className="container my-3 d-flex row justify-content-center m-auto">
-          <div className="pt-5">
+          <div className="pt-5 border-bottom">
             <h1 className="display-5 mb-3 fw-bold text-center">TrendTracker</h1>
             <p className="lead text-center">
               Welcome to TrendTracker, an AI-powered Product demand forecasting
               tool.{" "}
             </p>
           </div>
-          <div className="px-5">
-            <hr />
-          </div>
-
-          <Ranking />
         </div>
-      }
     </>
   );
 }

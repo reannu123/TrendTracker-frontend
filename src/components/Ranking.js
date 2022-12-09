@@ -20,13 +20,19 @@ function Ranking() {
     },
   ];
   return (
+    Item(items)
+  );
+}
+
+function Item(data){
+  return(
     <>
       <div className="container mb-5">
         <div className="row">
           <div className="col-12 my-3 text-center">
             <h1>Current Rankings</h1>
           </div>
-          {items.map((item, index) => (
+          {data.map((item, index) => (
             <div className="col-12 mb-1" key={index}>
               <div className="col-12 d-flex col justify-content-center">
                 <div className=" rounded-2 w-25 text-center d-flex justify-content-center align-items-center">
@@ -47,7 +53,7 @@ function Ranking() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export default Ranking;
