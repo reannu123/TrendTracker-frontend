@@ -15,12 +15,14 @@ function Items(data) {
           </div>
           {data.map((item, index) => (
             <div className="col-12 mb-1" key={index}>
-              <div className="col-12 d-flex col justify-content-center">
-                <div className=" card col-1 border rounded-2 text-center d-flex justify-content-center align-items-center">
+              <div className="container col-12 d-flex col justify-content-center align-items-around">
+                <div className=" flex-shrink-0 card col-3 col-lg-1  border rounded-2 text-center d-flex justify-content-center align-items-center">
                   <h5>{index + 1}</h5>
                 </div>
-                <div className="col-8 card bg-black">
-                  <img src="default.png" className="thumbnail" alt="..." />
+                <div className="d-none p-2 flex-grow-0  d-lg-flex card col-3 col-lg-2 border rounded-2 text-center">
+                  <img src="default.png" className="img-thumbnail" alt="..." />
+                </div>
+                <div className="col-5 col-lg-6 card">
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.description}</p>
@@ -30,14 +32,6 @@ function Items(data) {
                     >
                       Check Details
                     </Link>
-                  </div>
-                  <div className=" card-footer text-muted">
-                    <div className="row">
-                      <div className="col-6">
-                        <h6>Price</h6>
-                        <p>{item.name}</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
