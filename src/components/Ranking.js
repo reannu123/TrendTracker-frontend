@@ -1,29 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Ranking() {
-  const items = [
-    {
-      name: "Item 1",
-      description: "This is the first item",
-    },
-    {
-      name: "Item 2",
-      description: "This is the second item",
-    },
-    {
-      name: "Item 3",
-      description: "This is the third item",
-    },
-    {
-      name: "Item 4",
-      description: "This is the fourth item",
-    },
-  ];
-  return Item(items);
+function Ranking(props) {
+  return Items(props.listData);
 }
 
-function Item(data) {
+function Items(data) {
   return (
     <>
       <div className="container mb-5">
@@ -37,16 +19,25 @@ function Item(data) {
                 <div className=" card col-1 border rounded-2 text-center d-flex justify-content-center align-items-center">
                   <h5>{index + 1}</h5>
                 </div>
-                <div className="col-8 card">
+                <div className="col-8 card bg-black">
+                  <img src="default.png" className="thumbnail" alt="..." />
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.description}</p>
                     <Link
-                      to={window.location.pathname + "/" + index}
+                      to={window.location.pathname + "/" + item.id}
                       className="btn btn-primary"
                     >
                       Check Details
                     </Link>
+                  </div>
+                  <div className=" card-footer text-muted">
+                    <div className="row">
+                      <div className="col-6">
+                        <h6>Price</h6>
+                        <p>{item.name}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
