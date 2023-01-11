@@ -1,7 +1,7 @@
 import React from "react";
 import Ranking from "../components/Ranking";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { instance, auth } from "../api/axios";
 
 function Users() {
   // Create a state to store the data
@@ -9,7 +9,7 @@ function Users() {
 
   // Create a function to fetch data from api
   const fetchItems = async () => {
-    const result = await axios(`http://188.166.228.122:5000/api/users`);
+    const result = await instance.get("/api/users");
     setItems(result.data);
   };
 
