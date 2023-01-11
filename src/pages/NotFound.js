@@ -8,7 +8,9 @@ function NotFound() {
     <>
       {
         <Container className="py-5 my-3 bg-white rounded-3">
-          <h1 className="text-center display-5 fw-bold text-center">404 Not Found</h1>
+          <h1 className="text-center display-5 fw-bold text-center">
+            Coming Soon
+          </h1>
         </Container>
       }
     </>

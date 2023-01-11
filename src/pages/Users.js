@@ -1,29 +1,23 @@
 import React from "react";
 import Ranking from "../components/Ranking";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 function Users() {
-  const items = [
-    {
-      name: "User 1",
-      description: "This is the first user",
-      id: 123,
-    },
-    {
-      name: "User 2",
-      description: "This is the second user",
-      id: 456,
-    },
-    {
-      name: "User 3",
-      description: "This is the third user",
-      id: 789,
-    },
-    {
-      name: "User 4",
-      description: "This is the fourth user",
-      id: 101112,
-    },
-  ];
+  // Create a state to store the data
+  const [items, setItems] = React.useState([]);
+
+  // Create a function to fetch data from api
+  const fetchItems = async () => {
+    const result = await axios(`http://188.166.228.122:5000/api/users`);
+    setItems(result.data);
+  };
+
+  // Call the function to fetch data from api
+  React.useEffect(() => {
+    fetchItems();
+  }, []);
+
   return (
     <>
       <div className="bg-white rounded-3 py-3 container">

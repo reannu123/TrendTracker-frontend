@@ -24,10 +24,11 @@ function Items(data) {
                 </div>
                 <div className="col-5 col-lg-6 card">
                   <div className="card-body justify-content-center">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description}</p>
+                    <h5 className="card-title">{item.username}</h5>
+                    <p className="card-text">{item.points}</p>
+                    <p className="card-text">{item.positivity}</p>
                     <Link
-                      to={window.location.pathname + "/" + item.id}
+                      to={window.location.pathname + "/" + item.username}
                       className="btn btn-primary"
                     >
                       Check Details
