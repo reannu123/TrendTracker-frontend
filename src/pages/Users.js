@@ -23,7 +23,7 @@ function Users() {
       <div className="bg-white rounded-3 py-3 container">
         <h1 className="m-5 text-center">Users</h1>
       </div>
-      <Ranking listData={items} />
+      <Ranking listData={items} listType={1} />
     </>
   );
 }
