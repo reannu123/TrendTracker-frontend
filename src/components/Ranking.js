@@ -31,6 +31,8 @@ function UserItems(data) {
                     <h5 className="card-title">{item.username}</h5>
                     <p className="card-text">Points: {item.points}</p>
                     <p className="card-text">Positivity: {item.positivity}</p>
+                    <p className="card-text">Hashtags: {item.hashtags}</p>
+
                     <Link
                       to={window.location.pathname + "/" + item.username}
                       className="btn btn-primary"
