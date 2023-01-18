@@ -35,10 +35,16 @@ function UserItems(data) {
 
                     <Link
                       to={window.location.pathname + "/" + item.username}
-                      className="btn btn-primary"
+                      className="btn btn-primary mx-1"
                     >
                       Check Details
                     </Link>
+                    <a
+                      href={"http://tiktok.com/@" + item.username}
+                      className="btn btn-danger mx-1"
+                    >
+                      Go to Account
+                    </a>
                   </div>
                 </div>
               </div>
