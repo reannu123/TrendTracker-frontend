@@ -33,7 +33,17 @@ function UserItems(data) {
                       Points: {item.points.toLocaleString("en-US")}
                     </p>
                     <p className="card-text">Positivity: {item.positivity}</p>
-                    <p className="card-text">Hashtags: {item.hashtags}</p>
+                    <p className="card-text">
+                      Hashtags:
+                      {item.hashtags.split(" ").map((tag, index) => (
+                        <a
+                          className="text-decoration-none"
+                          href={"https://tiktok.com/tag/" + tag.substring(1)}
+                        >
+                          {" " + tag + " "}
+                        </a>
+                      ))}
+                    </p>
 
                     <Link
                       to={window.location.pathname + "/" + item.username}
