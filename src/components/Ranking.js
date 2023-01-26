@@ -29,7 +29,9 @@ function UserItems(data) {
                 <div className="col-8 col-lg-9 card">
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.username}</h5>
-                    <p className="card-text">Points: {item.points}</p>
+                    <p className="card-text">
+                      Points: {item.points.toLocaleString("en-US")}
+                    </p>
                     <p className="card-text">Positivity: {item.positivity}</p>
                     <p className="card-text">Hashtags: {item.hashtags}</p>
 
@@ -76,7 +78,9 @@ function ProductItems(data) {
                 <div className="col-5 col-lg-6 card">
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">Points {item.points}</p>
+                    <p className="card-text">
+                      Points {item.points.toLocaleString("en-US")}
+                    </p>
 
                     <Link
                       to={window.location.pathname + "/" + item.name}

@@ -31,7 +31,9 @@ function ProductList(props) {
               <div className="card-body justify-content-center">
                 <h5 className="card-title">Post by {item.url.split("/")[3]}</h5>
                 <p className="card-text">{item.post}</p>
-                <p className="card-text">Points: {item.points}</p>
+                <p className="card-text">
+                  Points: {item.points.toLocaleString("en-US")}
+                </p>
                 <a href={item.url} className="btn btn-primary mx-1">
                   Go to Post
                 </a>
