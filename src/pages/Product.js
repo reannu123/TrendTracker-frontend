@@ -1,80 +1,53 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { LineChart, DoughnutChart } from "../components/Charts";
-import { faker } from "@faker-js/faker";
+import { useParams, useLocation, Link } from "react-router-dom";
 
 function Product() {
+  const location = useLocation();
+  const { posts } = location.state;
   const { id } = useParams();
-  const doughnutData = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
-  const lineData = {
-    labels: labels,
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
-        ),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Dataset 2",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
-        ),
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  };
-
+  console.log(posts);
   return (
     <div className="container ">
-      <h1 className="card m-5 pb-5">Product {id}</h1>
+      <h1 className="card m-5 p-5">Posts about {id}</h1>
       <div className="container d-flex justify-content-around m-auto align-items-center">
-        <div className="card ">
-          <LineChart data={lineData} />
-        </div>
-        <div className="card">
-          <DoughnutChart data={doughnutData} />
-        </div>
+        <ProductList items={posts} />
       </div>
     </div>
   );
 }
 
+function ProductList(props) {
+  const data = props.items;
+  console.log(data);
+  return (
+    <div>
+      {data.map((item, index) => (
+        <div className="col-12 mb-1" key={index}>
+          <div className="container col-12 d-flex col justify-content-center align-items-around">
+            <div className=" flex-shrink-0 card col-3 col-lg-1  border rounded-2 text-center d-flex justify-content-center align-items-center">
+              <h5>{index + 1}</h5>
+            </div>
+            <div className="col-8 col-lg-9 card">
+              <div className="card-body justify-content-center">
+                <h5 className="card-title">Post by {item.url.split("/")[3]}</h5>
+                <p className="card-text">{item.post}</p>
+                <p className="card-text">Points: {item.points}</p>
+                <a href={item.url} className="btn btn-primary mx-1">
+                  Go to Post
+                </a>
+
+                <a
+                  href={"https://tiktok.com/" + item.url.split("/")[3]}
+                  className="btn btn-danger mx-1"
+                >
+                  Go to Account
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 export default Product;

@@ -20,13 +20,13 @@ function UserItems(data) {
           {data.map((item, index) => (
             <div className="col-12 mb-1" key={index}>
               <div className="container col-12 d-flex col justify-content-center align-items-around">
-                <div className=" flex-shrink-0 card col-3 col-lg-1  border rounded-2 text-center d-flex justify-content-center align-items-center">
+                <div className=" flex-shrink-0 card col-2 col-lg-1  border rounded-2 text-center d-flex justify-content-center align-items-center">
                   <h5>{index + 1}</h5>
                 </div>
                 <div className="d-none p-2 flex-grow-0  d-lg-flex card col-3 col-lg-2 border rounded-2 text-center">
                   <img src={item.avatar} className="img-thumbnail" alt="..." />
                 </div>
-                <div className="col-5 col-lg-6 card">
+                <div className="col-8 col-lg-9 card">
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.username}</h5>
                     <p className="card-text">Points: {item.points}</p>
@@ -70,18 +70,20 @@ function ProductItems(data) {
                 <div className=" flex-shrink-0 card col-3 col-lg-1  border rounded-2 text-center d-flex justify-content-center align-items-center">
                   <h5>{index + 1}</h5>
                 </div>
-                <div className="d-none p-2 flex-grow-0  d-lg-flex card col-3 col-lg-2 border rounded-2 text-center">
+                {/* <div className="d-none p-2 flex-grow-0  d-lg-flex card col-3 col-lg-2 border rounded-2 text-center">
                   <img src="default.png" className="img-thumbnail" alt="..." />
-                </div>
+                </div> */}
                 <div className="col-5 col-lg-6 card">
                   <div className="card-body justify-content-center">
                     <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description}</p>
+                    <p className="card-text">Points {item.points}</p>
+
                     <Link
-                      to={window.location.pathname + "/" + item.id}
+                      to={window.location.pathname + "/" + item.name}
                       className="btn btn-primary"
+                      state={{ posts: item.posts }}
                     >
-                      Check Details
+                      Check Posts
                     </Link>
                   </div>
                 </div>

@@ -64,7 +64,7 @@ function User() {
 
   return (
     <div className="container ">
-      <h1 className="card m-5 pb-5">User {id}</h1>
+      <h1 className="card m-5 p-5">User {id}</h1>
       <div className="container d-flex justify-content-around m-auto align-items-center">
         <div className="card ">
           <LineChart data={lineData} />

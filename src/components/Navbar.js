@@ -28,11 +28,6 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/faqs" className="nav-link" aria-current="page">
-              FAQs
-            </NavLink>
-          </li>
-          <li className="nav-item">
             <NavLink to="/about" className="nav-link" aria-current="page">
               About
             </NavLink>

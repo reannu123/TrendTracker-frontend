@@ -1,28 +1,22 @@
 import React from "react";
 import Ranking from "../components/Ranking";
+import { instance, auth } from "../api/axios";
+
 function Products() {
-  const items = [
-    {
-      name: "Product 1",
-      description: "This is the first product",
-      id: 123,
-    },
-    {
-      name: "Product 2",
-      description: "This is the second product",
-      id: 456,
-    },
-    {
-      name: "Product 3",
-      description: "This is the third product",
-      id: 789,
-    },
-    {
-      name: "Product 4",
-      description: "This is the fourth product",
-      id: 101112,
-    },
-  ];
+  // Create a state to store the data
+  const [items, setItems] = React.useState([]);
+
+  // Create a function to fetch data from api
+  const fetchItems = async () => {
+    const result = await instance.get("/api/products");
+    setItems(result.data);
+  };
+
+  // Call the function to fetch data from api
+  React.useEffect(() => {
+    fetchItems();
+  }, []);
+
   return (
     <>
       <div className="bg-white rounded-3 py-3 container">
