@@ -37,7 +37,7 @@ function UserItems(data) {
                       Hashtags:
                       {item.hashtags.split(" ").map((tag, index) => (
                         <a
-                          className="text-decoration-none"
+                          className="link"
                           href={"https://tiktok.com/tag/" + tag.substring(1)}
                         >
                           {" " + tag + " "}
